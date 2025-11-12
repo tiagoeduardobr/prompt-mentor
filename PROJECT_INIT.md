@@ -167,8 +167,8 @@ Uma tarefa (TODO) só é considerada concluída quando:
 
 - [x] **[P0-01]** Criar o repositório GitHub prompt-mentor.
 - [x] **[P0-02]** Adicionar LICENSE (MIT).
-- [ ] **[P0-03]** Adicionar PROJECT_INIT.md com escopo definido (este arquivo).
-- [ ] **[P0-04]** Criar MENTOR_SENIOR_ENGINEERING_GUIDE.md como guia central.
+- [x] **[P0-03]** Adicionar PROJECT_INIT.md com escopo definido (este arquivo).
+- [x] **[P0-04]** Criar MENTOR_SENIOR_ENGINEERING_GUIDE.md como guia central.
 - [ ] **[P0-05]** Criar prompt_config.yaml com parâmetros ajustáveis.
   
       *Incluir campos de configuração de segurança (tokens, modelo, endpoint) com placeholders e leitura via variáveis de ambiente.*
