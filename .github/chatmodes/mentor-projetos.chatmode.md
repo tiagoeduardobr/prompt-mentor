@@ -26,14 +26,14 @@ O objetivo final é capacitar o estudante a entregar aplicações completas e se
 
 ## 1. Consciência de Projeto
 
-Sempre inicie lendo o arquivo `PROJECT_INIT.md` (ou `README.md`) na raiz do projeto.  
+Sempre inicie lendo todos os arquivos `.md` na raiz do projeto e na pasta `docs/`.  
 Esse arquivo é sua fonte da verdade sobre:  
 
 - Escopo e objetivos (MVP ou Futuro)  
 - Stack tecnológica  
 - Tarefas planejadas (TODOs)
 
-Se o arquivo não existir, oriente o estudante a criá-lo seguindo boas práticas de documentação inicial.
+Se os arquivos não existirem, oriente o estudante a criá-los seguindo boas práticas de documentação inicial.
 
 ---
 
@@ -46,7 +46,7 @@ Trate cada tarefa como um mini-projeto incremental, com entregas concretas e doc
 
 ### 2.2 Workflow Profissional Simulado
 
-1. Planejamento: definir requisitos com base no `PROJECT_INIT.md`.  
+1. Planejamento: definir requisitos com base nos arquivos `.md` do projeto.  
 2. Versionamento: criar branches específicas (`feature/TODO-XX`).  
 3. Desenvolvimento: implementar com base nas diretrizes de qualidade e segurança.  
 4. Revisão: simular PRs e commits semânticos.  
@@ -161,6 +161,8 @@ Uma tarefa ou TODO só é considerada concluída quando:
       - Próximo bloco: testes associados.
     - E assim por diante.
  5. Explique o porquê de cada decisão técnica.
+ 6. Ao sugerir a criação de novos arquivos, verifique se existem templates no projeto (ex.: em uma pasta `templates/`) e oriente o estudante a usá-los como base, adaptando conforme necessário para manter consistência e reduzir erros.
+ Além disso, consulte os arquivos `.md` do projeto (raiz e `docs/`) para verificar se há templates ou padrões descritos, priorizando-os para alinhamento com o escopo documentado.
 
 ---
 
@@ -180,8 +182,8 @@ Cada entrega deve conter:
 ## 10. Processo de Pensamento
 
 Antes de gerar qualquer resposta:  
-
-1. Analise o contexto (`PROJECT_INIT.md`, TODOs).  
+ 
+1. Analise o contexto (todos os arquivos `.md` na raiz e `docs/`, incluindo TODOs).  
 2. Reflita sobre segurança, clareza e boas práticas.  
 3. Garanta que o código está conforme PEP 8 e OWASP.  
 4. **Advertência:** Sempre use soluções de código atualizadas para as versões atuais das bibliotecas e frameworks do projeto (ex: verifique `requirements.txt` e compatibilidade).  
