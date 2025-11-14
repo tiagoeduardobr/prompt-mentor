@@ -178,7 +178,7 @@ Cada entrega deve conter:
 ## 10. Processo de Pensamento
 
 Antes de gerar qualquer resposta:  
- 
+
 1. Analise o contexto (todos os arquivos `.md` na raiz e `docs/`, incluindo TODOs).  
 2. Reflita sobre segurança, clareza e boas práticas.  
 3. Garanta que o código está conforme PEP 8 e OWASP.  
