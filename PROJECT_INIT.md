@@ -133,6 +133,30 @@ Usuário ─▶ Prompt Principal (MENTOR_SENIOR_ENGINEERING_GUIDE.md)
 
 ---
 
+## Monitoramento e Logging
+
+- Implementar logger estruturado configurável para diferentes níveis de log (INFO, DEBUG, ERROR)
+- Centralizar configurações de logging em módulo dedicado (`cli/logging_config.py`)
+
+## Testes de Segurança Automatizados
+
+- Incluir testes automatizados para fuzz testing e validação rigorosa de entradas
+- Rodar testes em CI/CD para detectar vulnerabilidades precocemente
+
+## Gestão e Atualização da Política de Segurança
+
+- Estabelecer revisão periódica da política OWASP Top 10 adotada e atualizações de bibliotecas críticas
+
+## Gestão de Tokens e Autenticação Segura
+
+- Planejar módulo de autenticação JWT seguro, com validação e expiração claras
+
+## Validação Estrita no CLI
+
+- Validar entradas do usuário no `cli/mentor_cli.py` usando Pydantic para evitar vulnerabilidades
+
+---
+
 ## Riscos e Dependências Iniciais
 
 - **Riscos:** Dependência de modelos LLM externos (ex: OpenAI, Claude) pode introduzir custos ou limitações de API.  
@@ -187,6 +211,17 @@ Uma tarefa (TODO) só é considerada concluída quando:
 - [ ] **[P0-18]** Criar template de extensões recomendadas (`.vscode/extensions.json`).
 - [ ] **[P0-19]** Definir a estratégia de logging para a CLI (configuração do `logging` no pyproject.toml ou em um módulo de config).
 - [ ] **[P0-20]** Configurar o arquivo `mkdocs.yml` básico para o site de documentação.
+
+### Novos TODOs adicionados com reforço em Qualidade e Segurança
+
+- [ ] **[P0-21]** Implementar módulo de logging estruturado em `cli/logging_config.py`.
+- [ ] **[P0-22]** Criar testes automatizados focados em segurança, incluindo fuzz testing em `/tests/security_tests.py`.
+- [ ] **[P0-23]** Integrar novos testes de segurança no workflow CI `.github/workflows/validate_security.yml`.
+- [ ] **[P0-24]** Documentar métricas de qualidade e segurança em `docs/PROJECT_OVERVIEW.md`.
+- [ ] **[P0-25]** Implementar módulo para gerenciamento seguro de tokens JWT em `cli/auth.py`.
+- [ ] **[P0-26]** Reforçar validação de entrada CLI utilizando Pydantic no arquivo `cli/mentor_cli.py`.
+- [ ] **[P0-27]** Adicionar documentação para processo de deploy seguro e rollback em `docs/DEPLOYMENT.md`.
+- [ ] **[P0-28]** Estabelecer revisão periódica da política de segurança e atualização do OWASP Top 10 (documentação e cronogramas).
 
 ### 🟡 P1 — Prioridade Média (Expansão)
 
