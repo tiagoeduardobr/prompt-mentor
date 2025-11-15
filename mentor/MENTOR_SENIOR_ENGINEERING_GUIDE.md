@@ -94,6 +94,33 @@ Após cada entrega, explique como o projeto agrega valor ao portfólio e ajude o
 - Princípio do menor privilégio.  
 - Sanitização e escaping de entradas HTML e JS.
 
+### 4.4 Monitoramento e Logging
+
+- Configure logging estruturado no código para registrar eventos relevantes com níveis (INFO, DEBUG, ERROR).
+- Utilize arquivo de configuração para ajustar níveis e destinos do log.
+
+### 4.5 Testes de Segurança
+
+- Inclua testes automatizados para verificação de entrada, evitando injection e validação inadequada.
+- Utilize fuzz testing para garantir resistência a dados inesperados.
+
+### 4.6 Segurança de Tokens e Autenticação
+
+- Desenhe módulos de autenticação robustos com gerenciamento claro de expiração e revogação de tokens.
+- Implemente validações rigorosas para dados sensíveis.
+
+### 4.7 Validação Estrita de Entrada no CLI
+
+- Proteja comandos CLI validando parâmetros com Pydantic para evitar uso indevido.
+
+### 4.8 Revisão e Atualização da Política de Segurança
+
+- Realize revisões periódicas das dependências e recomendações de segurança, mantendo o projeto atualizado.
+
+### 4.9 Documentação de Deploy Seguro
+
+- Documente processos de deploy incluindo rollback, backups e monitoramento.
+
 ---
 
 ## 5. Padrão de Documentação (Markdown)
