@@ -287,3 +287,134 @@ OPENAI_API_KEY="SUA_CHAVE_API_AQUI"
 - [ ] **[Testes]** A cobertura de testes está igual ou superior a 70%.
 - [ ] **[Logs]** O logging necessário foi implementado.
 ```
+
+---
+
+## 8. Template de Monitoramento e Logging
+
+Este template define uma configuração base para logging estruturado em projetos Python.
+
+```python
+# cli/logging_config.py
+import logging
+import sys
+
+def setup_logger(name: str, level: str = "INFO"):
+    formatter = logging.Formatter(
+        '[%(asctime)s] [%(levelname)s] %(name)s: %(message)s'
+    )
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(formatter)
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+    return logger
+```
+
+- Recomenda-se usar JSONLogger ou custom formatter caso o projeto escale para múltiplos ambientes (exemplo: produção e desenvolvimento).
+- Adaptar chamadas de logger nos principais comandos da CLI.
+
+---
+
+## 9. Template de Testes de Segurança Automatizados
+
+Diretório sugerido: `/tests/security_tests.py`
+
+```python
+import pytest
+from cli.mentor_cli import process_input
+
+@pytest.mark.parametrize("input_text", [
+    "' OR 1=1 --",
+    "#$%@!*&",
+    "<script>alert(1)</script>"
+])
+def test_input_sanitization(input_text):
+    # Exemplo: função process_input deve rejeitar ou tratar entradas maliciosas
+    result = process_input(input_text)
+    assert "error" not in result.lower()
+```
+
+- Integrar este arquivo à pipeline de CI para rodar a cada PR.
+
+---
+
+## 10. Template de Revisão de Política de Segurança e Atualização de Dependências
+
+Adicionar na documentação ou agenda do projeto:
+
+```markdown
+### Política de Revisão de Segurança
+
+- Revisar trimestralmente dependências do projeto usando `safety` e atualização via Poetry.
+- Revisar e, se necessário, atualizar práticas conforme OWASP Top 10.
+- Documentar decisões e atualizações em logs de auditoria internos do repositório na pasta `/docs/security-reports/`.
+```
+
+---
+
+## 11. Template para Autenticação Segura (Plano Futuro)
+
+```python
+# cli/auth.py (esqueleto)
+import jwt
+import datetime
+
+def generate_token(user_id: str, secret: str, exp_seconds: int = 3600):
+    payload = {
+        "user_id": user_id,
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(seconds=exp_seconds),
+    }
+    return jwt.encode(payload, secret, algorithm="HS256")
+
+def verify_token(token: str, secret: str):
+    try:
+        payload = jwt.decode(token, secret, algorithms=["HS256"])
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
+```
+
+- TODO: detalhar documentação dos fluxos de expiração/renovação e guardar segredo somente em variáveis de ambiente.
+
+---
+
+## 12. Template de Validação Estrita de Entrada para CLI
+
+```python
+# cli/mentor_cli.py (exemplo de uso com Pydantic)
+from pydantic import BaseModel, ValidationError
+
+class CommandInput(BaseModel):
+    command: str
+    argument: str
+
+def main(args):
+    try:
+        data = CommandInput(command=args[0], argument=args[1])
+    except ValidationError as err:
+        print("Erro de validação:", err)
+        return
+    # continuar execução com data já validado
+```
+
+- Documentar schemas válidos conforme comandos aceitos no CLI.
+
+---
+
+## 13. Monitoramento e Segurança
+
+- Incluir configuração de logging estruturado para facilitar auditorias.
+- Adicionar testes específicos focados em segurança, rodados na pipeline CI.
+- Definir métricas para cobertura de testes, bugs, e vulnerabilidades.
+- Revisar política de segurança e dependências regularmente.
+
+---
+
+## 14. Processo de Deploy Seguro
+
+- Documentar processos para rollback, backups e monitoramento pós-deploy.
+- Incluir etapas de validação de segurança antes do deploy em produção.
+- Automatizar deploys com ferramentas como Docker, Kubernetes, ou CI/CD.
