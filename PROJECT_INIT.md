@@ -196,7 +196,7 @@ Uma tarefa (TODO) só é considerada concluída quando:
 - [x] **[P0-05]** Criar prompt_config.yaml com parâmetros ajustáveis.
   
       *Incluir campos de configuração de segurança (tokens, modelo, endpoint) com placeholders e leitura via variáveis de ambiente.*
-- [ ] **[P0-06]** Criar .gitignore com regras básicas para Python (ex: .env, `__pycache__`, .venv, .pytest_cache, *.pyc).
+- [x] **[P0-06]** Criar .gitignore com regras básicas para Python (ex: .env, `__pycache__`, .venv, .pytest_cache, *.pyc).
 - [ ] **[P0-07]** Adicionar README.md inicial com propósito e estrutura.
 - [ ] **[P0-08]** Montar estrutura de diretórios inicial (mentor/, docs/, examples/, .vscode/).
 - [ ] **[P0-09]** Documentar filosofia e boas práticas de engenharia de prompt.
