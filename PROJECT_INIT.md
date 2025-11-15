@@ -193,27 +193,24 @@ Uma tarefa (TODO) só é considerada concluída quando:
 - [x] **[P0-02]** Adicionar LICENSE (MIT).
 - [x] **[P0-03]** Adicionar PROJECT_INIT.md com escopo definido (este arquivo).
 - [x] **[P0-04]** Criar MENTOR_SENIOR_ENGINEERING_GUIDE.md como guia central.
-- [ ] **[P0-05]** Criar prompt_config.yaml com parâmetros ajustáveis.
+- [x] **[P0-05]** Criar prompt_config.yaml com parâmetros ajustáveis.
   
       *Incluir campos de configuração de segurança (tokens, modelo, endpoint) com placeholders e leitura via variáveis de ambiente.*
-- [ ] **[P0-06]** Adicionar README.md inicial com propósito e estrutura.
-- [ ] **[P0-07]** Montar estrutura de diretórios inicial (mentor/, docs/, examples/, .vscode/).
-- [ ] **[P0-08]** Documentar filosofia e boas práticas de engenharia de prompt.
-- [ ] **[P0-09]** Inicializar o projeto com `Poetry` (criando o `pyproject.toml`).
-- [ ] **[P0-10]** Adicionar dependências básicas de projeto e qualidade via Poetry (ex: PyYAML, rich, typer, pytest, pytest-cov, black, isort, flake8, bandit, safety, python-dotenv, mkdocs).
-- [ ] **[P0-11]** Configurar .env.example com variáveis de ambiente seguras.
-- [ ] **[P0-12]** Adicionar instruções de configuração segura no README.md.
-- [ ] **[P0-13]** Configurar `pytest` (com `pytest-cov`) dentro do `pyproject.toml`.
-- [ ] **[P0-14]** Configurar as regras de `black`, `isort`, e `flake8` dentro do `pyproject.toml`.
-- [ ] **[P0-15]** Criar script inicial de verificação de segurança (rodando `bandit` e `safety`).
-- [ ] **[P0-16]** Criar `CONTRIBUTING.md` com o guia de configuração inicial do desenvolvedor (clonar, `poetry install`, `poetry shell`, `poetry run pytest`).
-- [ ] **[P0-17]** Criar templates de configuração do VS Code (`.vscode/settings.json`) para formatar com Black ao salvar e usar o interpretador do Poetry.
-- [ ] **[P0-18]** Criar template de extensões recomendadas (`.vscode/extensions.json`).
-- [ ] **[P0-19]** Definir a estratégia de logging para a CLI (configuração do `logging` no pyproject.toml ou em um módulo de config).
-- [ ] **[P0-20]** Configurar o arquivo `mkdocs.yml` básico para o site de documentação.
-
-### Novos TODOs adicionados com reforço em Qualidade e Segurança
-
+- [ ] **[P0-06]** Criar .gitignore com regras básicas para Python (ex: .env, `__pycache__`, .venv, .pytest_cache, *.pyc).
+- [ ] **[P0-07]** Adicionar README.md inicial com propósito e estrutura.
+- [ ] **[P0-08]** Montar estrutura de diretórios inicial (mentor/, docs/, examples/, .vscode/).
+- [ ] **[P0-09]** Documentar filosofia e boas práticas de engenharia de prompt.
+- [ ] **[P0-10]** Inicializar o projeto com `Poetry` (criando o `pyproject.toml`).
+- [ ] **[P0-11]** Adicionar dependências básicas de projeto e qualidade via Poetry (ex: PyYAML, rich, typer, pytest, pytest-cov, black, isort, flake8, bandit, safety, python-dotenv, mkdocs).
+- [ ] **[P0-12]** Configurar .env.example com variáveis de ambiente seguras.
+- [ ] **[P0-13]** Adicionar instruções de configuração segura no README.md.
+- [ ] **[P0-14]** Configurar `pytest` (com `pytest-cov`) dentro do `pyproject.toml`.
+- [ ] **[P0-15]** Configurar as regras de `black`, `isort`, e `flake8` dentro do `pyproject.toml`.
+- [ ] **[P0-16]** Criar script inicial de verificação de segurança (rodando `bandit` e `safety`).
+- [ ] **[P0-17]** Criar `CONTRIBUTING.md` com o guia de configuração inicial do desenvolvedor (clonar, `poetry install`, `poetry shell`, `poetry run pytest`).
+- [ ] **[P0-18]** Criar templates de configuração do VS Code (`.vscode/settings.json`) para formatar com Black ao salvar e usar o interpretador do Poetry.
+- [ ] **[P0-19]** Criar template de extensões recomendadas (`.vscode/extensions.json`).
+- [ ] **[P0-20]** Definir a estratégia de logging para a CLI (configuração do `logging` no pyproject.toml ou em um módulo de config).
 - [ ] **[P0-21]** Implementar módulo de logging estruturado em `cli/logging_config.py`.
 - [ ] **[P0-22]** Criar testes automatizados focados em segurança, incluindo fuzz testing em `/tests/security_tests.py`.
 - [ ] **[P0-23]** Integrar novos testes de segurança no workflow CI `.github/workflows/validate_security.yml`.
@@ -222,21 +219,7 @@ Uma tarefa (TODO) só é considerada concluída quando:
 - [ ] **[P0-26]** Reforçar validação de entrada CLI utilizando Pydantic no arquivo `cli/mentor_cli.py`.
 - [ ] **[P0-27]** Adicionar documentação para processo de deploy seguro e rollback em `docs/DEPLOYMENT.md`.
 - [ ] **[P0-28]** Estabelecer revisão periódica da política de segurança e atualização do OWASP Top 10 (documentação e cronogramas).
-
-### 🟡 P1 — Prioridade Média (Expansão)
-
-- [ ] **[P1-01]** Criar diretório mentor/specializations/ com subprompts temáticos.
-- [ ] **[P1-02]** Implementar tests/test_prompt_format.py para validar consistência de saída.
-- [ ] **[P1-03]** Criar examples/example_request.md e example_output.md.
-- [ ] **[P1-04]** Documentar uso no docs/PROMPT_ENGINEERING_GUIDE.md.
-- [ ] **[P1-05]** Definir guidelines de commits e PRs simulados.
-- [ ] **[P1-06]** Criar workflow .github/workflows/validate_prompts.yml para CI (validação de formato).
-- [ ] **[P1-07]** Criar workflow .github/workflows/validate_security.yml (CI) para rodar `bandit` e `safety` e verificar segredos hardcoded.
-- [ ] **[P1-08]** Criar módulo de abstração de modelos LLM em cli/mentor_cli.py para facilitar troca entre OpenAI, local e outros.
-- [ ] **[P1-09]** Incluir testes de fallback para modelos locais (open-source) no test_output_quality.py.
-- [ ] **[P1-10]** Criar Dockerfile para a aplicação CLI (mentor_cli.py) e garantir reprodutibilidade.
-- [ ] **[P1-11]** Criar docker-compose.yml para facilitar a execução de testes e da CLI (`docker-compose run test`).
-- [ ] **[P1-12]** Integrar badges (Shields.io) de status do CI, code coverage e licença no README.md.
+*[P1-12]** Integrar badges (Shields.io) de status do CI, code coverage e licença no README.md.
 
 ### 🔵 P2 — Prioridade Baixa (Integração e Educação)
 
