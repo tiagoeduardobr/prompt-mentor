@@ -108,6 +108,8 @@ Após cada entrega, explique como o projeto agrega valor ao portfólio e ajude o
 
 - Desenhe módulos de autenticação robustos com gerenciamento claro de expiração e revogação de tokens.
 - Implemente validações rigorosas para dados sensíveis.
+- Considere implementar rate limiting para proteger contra ataques de força bruta.
+- Documente políticas de bloqueio de conta após tentativas falhas sucessivas.
 
 ### 4.7 Validação Estrita de Entrada no CLI
 
