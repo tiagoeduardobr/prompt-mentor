@@ -34,34 +34,34 @@ O **Prompt Mentor** é um framework open-source de engenharia de prompt que simu
 
 ### Passos de Instalação
 
-1. Clone o repositório:
+1 Clone o repositório:
 
 ```bash
    git clone https://github.com/tiagoeduardobr/prompt-mentor.git
    cd prompt-mentor
 ```
 
-2. Configure variáveis de ambiente seguras:
+2 Configure variáveis de ambiente seguras:
 
 ```bash
    cp .env.example .env
 ```
 
-    *Preencha as variáveis no `.env` com suas chaves API (ex: OPENAI_API_KEY). Nunca commite este arquivo.*
+*Preencha as variáveis no `.env` com suas chaves API (ex: OPENAI_API_KEY). Nunca commite este arquivo.*
 
-3. Instale as dependências com Poetry:
+3 Instale as dependências com Poetry:
 
 ```bash
    poetry install
 ```
 
-4. Ative o ambiente virtual:
+4 Ative o ambiente virtual:
 
 ```bash
    poetry shell
 ```
 
-5. (Atualmente CLI-only) Teste a configuração:
+5 (Atualmente CLI-only) Teste a configuração:
 
 ```bash
     poetry run python -c "print('Configuração completa. Aguarde futuras versões para CLI interativa.')"
